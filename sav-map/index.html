@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png"/>
+  <meta charset=utf-8 />
+  <title>Water Reporter - SAV Mapping</title>
+  <link href='https://www.mapbox.com/base/latest/base.css' rel='stylesheet' />
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.css' rel='stylesheet' />
+  <link href='index.css' rel='stylesheet' />
+  <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.1.0/mapbox-gl-geocoder.min.js'></script>
+<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.1.0/mapbox-gl-geocoder.css' type='text/css' />
+</head>
+
+<body>
+
+<div id="sidebar" class="sidebar pin-topleft z1">
+  <div class="sidebar-inner fill-bg dark round sidebar-inner">
+    <div class="flex-scroll scroll-styled pad4">
+      <div><a href="http://waterreporter.org/"><img style=padding-bottom:"25px;" src="img/commons-logo.png" width="215" height="59"></div></a>
+    
+
+      <h2 style="padding-top:25px; color:#293742">SAV Mapping</h2>
+      <p class="prose show-mobile"><text style='color:#293742'>
+ If you live near the Bay, download the <a style='color: #1878B8' href="https://www.waterreporter.org" target="_blank">Water Reporter App</a> to help share your #SAV observation’s with our community!</text>
+      </p>
+      <p class="prose hide-mobile"><text style='color:#293742'>
+Volunteers from across the Chesapeake Bay watershed have used Water Reporter to collect over 130 observations of submerged aquatic vegetation to help document the increase in abundance and help inform <a style='color: #1878B8' href="http://www.vims.edu/features/programs/sav.php" target="_blank">Virginia Institute of Marine Science’s (VIMS) annual aerial survey</a>.</text>
+      </p>
+     
+
+      <div class="projects">
+        <h3 class="space-bottom1"><text style='color:#293742'> Fly to Location</text></h3>
+        
+         <div id="sev" class="button fill-navy-dark dark">
+         
+          <span> Severna Park</span>
+        </div>
+         <div id="chester" class="button fill-navy-dark dark">
+        
+          <span> Kent Narrows</span>
+        </div>
+        <div id="wye" class="button fill-navy-dark dark">
+          
+          <span> Easton</span>
+        </div>
+         <div id="jamestown" class="button fill-navy-dark dark">
+          
+          <span> Jamestown</span>
+        </div>
+         <div id="claybanklanding" class="button fill-navy-dark dark">
+          
+          <span> Claybank Landing</span>
+        </div>
+        <div id="richmond" class="button fill-navy-dark dark">
+          
+          <span> Richmond</span>
+        </div>
+        <div id="palmayra" class="button fill-navy-dark dark">
+          
+          <span> Palmayra</span>
+        </div>
+
+        <div id="bay" class="button fill-navy-dark dark">
+          
+          <span> Chesapeake Bay</span>
+        </div>
+       
+      </div>
+    </div>
+  </div>
+</div>
+  <div id="map"></div>
+   <script src='index.js'></script>
+  <div class="map-overlay" id="legend">
+<div><span class="legend-key"<span><strong>Legend:</strong></span></div>
+   <div></br><span class="legend-key" style="background-color: rgb(8, 68, 96);"></span><span>National</span></div>
+   <div><span class="legend-key" style="background-color: rgb(0, 147, 208);"></span><span>Regional</span></div>
+   <div><span class="legend-key" style="background-color: rgb(255,196,35);"></span><span>State</span></div>
+   <div><span class="legend-key" style="background-color: rgb(15, 188, 157);"></span><span>Local</span></div>
+   <div><span></br>Pin size is based on organizational membership</span></div>
+</div> -->
+</body>
+
+</html>
