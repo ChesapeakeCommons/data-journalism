@@ -10,6 +10,29 @@ body {
   width: 100%;
 }
 
+.session {
+  margin-bottom: 20px;
+}
+
+.row {
+  height: 12px;
+  width: 100%;
+}
+
+.colors {
+  background: linear-gradient(to right, #FFFF10, #7EFFD4, #AAFF00, #32CD33);
+  margin-bottom: 5px;
+  
+}
+
+.label {
+  width: 18.5%;
+  display: inline-block;
+  text-align: center;
+}
+
+
+
 #buildings {
   color: #04B3DC;
 }

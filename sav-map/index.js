@@ -7,6 +7,7 @@ var map = new mapboxgl.Map({
    
 });
 
+
 map.on('click', function(e) {
     var features = map.queryRenderedFeatures(e.point, {
         layers: ['sav-8-4-17-8d5m74'] // replace this with the name of the layer
