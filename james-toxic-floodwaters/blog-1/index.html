@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png"/>
+  <meta charset=utf-8 />
+  <title>James Toxic Floodwaters</title>
+  <link href='https://www.mapbox.com/base/latest/base.css' rel='stylesheet' />
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js'></script>
+ <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.css' rel='stylesheet' />
+  <link href='index.css' rel='stylesheet' />
+  <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.1.0/mapbox-gl-compare.js'></script>
+<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-compare/v0.1.0/mapbox-gl-compare.css' type='text/css' />
+  <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.1.0/mapbox-gl-geocoder.min.js'></script>
+<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.1.0/mapbox-gl-geocoder.css' type='text/css' />
+<script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+</head>
+
+<body>
+
+<div id="sidebar" class="sidebar pin-topleft z1">
+  <div class="sidebar-inner fill-bg dark round sidebar-inner">
+    <div class="flex-scroll scroll-styled pad4">
+      <div><a href="http://chesapeakecommons.org/"><img style=padding-bottom:"25px;" src="img/commons-logo.png" width="215" height="59"></div></a>
+    
+
+      <h2 style="padding-top:25px; color:#293742">EPA Registered Facilities in the James Watershed</h2>
+      <p class="prose show-mobile"><text style='color:#293742'>
+        Add copy here! 
+
+ <!-- <a style= "color: #1878B8" href="https://www.atsdr.cdc.gov/" target="_blank">Agency for Toxic Substances and Disease Registry’s</a> (ATSDR) <a style= "color: #1878B8" href="https://svi.cdc.gov/" target="_blank">social vulnerability index</a> (SVI) by block -->
+
+      </p>
+      <p class="prose hide-mobile"><text style='color:#293742'>
+(Sample Text – David Edit)The following map shows the differing classes of industrial facilities in the James River Watershed.  Most analysis focus on the vulnerability of facilities that report to the Toxic Release Inventory, however, there are many other facility types in the James River Watershed (Sample Text – David Edit)
+
+
+
+      </p>
+
+      <div class="prose hide-mobile"><text style='color:#293742'>
+<div class='session'>
+  
+  <div class="fixedLegend"><h4><strong>MAP LEGEND</strong></h4>
+        <ul class="fa-ul">
+            <li><i class="fa-li fa fa-circle" style="font-size: 1em; color: #F1EE84;"></i>Superfund</i></li>
+            <li><i class="fa-li fa fa-circle" style="font-size: 1em; color: #5BBBD2;"></i>Toxic Release Inventory</i></li>
+            <li><i class="fa-li fa fa-circle" style="font-size: 1em; color: #F0B481;"></i>Nuclear Power Generator</i></li>
+            <li><i class="fa-li fa fa-circle" style="font-size: 1em; color: #182928;"></i>All other categories of facility</i></li>
+        </ul>
+    </div>
+ 
+  <div class='row labels'>
+    
+    
+
+
+    
+  </div>
+</div></text>
+
+  
+      </div>
+     
+
+      <div class="projects">
+        <h3 class="space-bottom1"><text style='color:#293742'> Explore a Location</text></h3>
+        
+         <!--  -->
+
+          <div id="hamptonroads" class="button fill-navy-dark dark" data-longitude="-76.412" data-latitude="36.927" data-zoom="9.9">
+        
+          <span> Hampton Roads</span>
+        </div>
+         
+         <div id="richmond" class="button fill-navy-dark dark" data-longitude="-77.437111" data-latitude="37.532708" data-zoom="12.79">
+        
+          <span> Richmond</span>
+        </div>
+        <div id="fullextent" class="button fill-navy-dark dark" data-longitude="-78.172251" data-latitude="37.681565" data-zoom="7.41">
+          
+          <span> Full Extent</span>
+        </div>
+         
+         
+
+      </div>
+
+
+       
+
+    </div>
+  </div>
+</div>
+
+  <div id='before' class='map'></div>
+<div id='after' class='map'></div>
+   <script src='index.js'></script>
+  
+</body>
+
+</html>
