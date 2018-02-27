@@ -21,7 +21,7 @@
 
     var compareMap = new mapboxgl.Compare(beforeMap, afterMap, {});
 
-    maps.forEach(function(map) {
+    maps.forEach(function(Map) {
 
         map.mapObject.on('click', function(e) {
 
