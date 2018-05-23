@@ -389,7 +389,7 @@
                 })
                 .setLngLat(currentFeature.geometry.coordinates)
                 .setHTML('<h3>'+ currentFeature.properties.locationname + '</h3>' +
-                    '<img style="width: 100%" src="' + currentFeature.properties.locationimg + '</img>'
+                    // '<img style="width: 100%" src="' + currentFeature.properties.locationimg + '"</img>'
                     '<h4>' + currentFeature.properties.locationcopy + '</h4>')
                 .addTo(map);
         }
