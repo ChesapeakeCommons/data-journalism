@@ -151,14 +151,14 @@
             padding-bottom: 50px;
         }
         
-        .mapboxgl-popup-close-button {
+        /*.mapboxgl-popup-close-button {
             display: none;
-        }
+        }*/
         
         .mapboxgl-popup-content {
             font: 400 15px/22px 'Source Sans Pro', 'Helvetica Neue', Sans-serif;
             padding: 0;
-            width: 180px;
+            width: 300px;
         }
         
         .mapboxgl-popup-content-wrapper {
@@ -315,7 +315,7 @@
                     "locationab": "The 2016 flood in western Alleghany County, Virginia (and West Virginia) stemmed from a once-in-a-thousand-year weather event and destroyed homes, bridges, roads, and other structures...",
                     "locationcopy": "The 2016 flood in western Alleghany County, Virginia (and West Virginia) stemmed from a once-in-a-thousand-year weather event and destroyed homes, bridges, roads, and other structures.  It killed 23 people and caused oil spills and other damage."
                 },
-                
+
 
             }]
         };
@@ -382,6 +382,7 @@
                 })
                 .setLngLat(currentFeature.geometry.coordinates)
                 .setHTML('<h3>'+ currentFeature.properties.locationname + '</h3>' +
+                    '<img style="width: 100%" src="' + currentFeature.properties.locationimg + '</img>'
                     '<h4>' + currentFeature.properties.locationcopy + '</h4>')
                 .addTo(map);
         }
