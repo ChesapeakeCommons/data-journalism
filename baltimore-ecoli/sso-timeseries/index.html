@@ -122,20 +122,20 @@
       type: 'circle',
       source: {
         type: 'geojson',
-        data: './collisions1601.geojson' // replace this with the url of your own geojson -- revert collisions1601.geojson balt_sso_final_v1.geojson
+        data: './balt_sso_final_v1.geojson' // replace this with the url of your own geojson -- revert collisions1601.geojson balt_sso_final_v1.geojson
       },
       paint: {
         'circle-radius': [
           'interpolate',
           ['linear'],
-          ['number', ['get', 'Casualty']],
+          ['number', ['get', 'SSO_Gal']],
           0, 4,
           5, 24
         ],
         'circle-color': [
           'interpolate',
           ['linear'],
-          ['number', ['get', 'Casualty']],
+          ['number', ['get', 'SSO_Gal']],
           0, '#2DC4B2',
           1, '#3BB3C3',
           2, '#669EC4',
