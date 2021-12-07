@@ -1,0 +1,475 @@
+<html><head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.19.1/mapbox-gl.js"></script>
+    <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v0.19.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v1.1.0/mapbox-gl-geocoder.js"></script>
+    <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v1.1.0/mapbox-gl-geocoder.css" type="text/css">
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
+<body>
+
+<style>
+#map {
+    position: fixed;
+    width:50%;
+}
+#features {
+    width: 50%;
+    margin-left: 50%;
+    font-family: sans-serif;
+    overflow-y: scroll;
+    background-color: #fafafa;
+}
+
+section {
+    padding:  25px 50px;
+    line-height: 25px;
+    border-bottom: 1px solid #ddd;
+    opacity: 0.25;
+    font-size: 13px;
+}
+section.active {
+    opacity: 1;
+}
+section:last-child {
+    border-bottom: none;
+    margin-bottom: 650px;
+}
+</style>
+
+<div id="map" class="mapboxgl-map"><div class="mapboxgl-canvas-container mapboxgl-interactive"><canvas class="mapboxgl-canvas" tabindex="0" width="953" height="520" style="position: absolute; width: 953px; height: 520px;"></canvas></div><div class="mapboxgl-control-container"><div class="mapboxgl-ctrl-top-left"><div class="mapboxgl-ctrl-geocoder mapboxgl-ctrl"><span class="geocoder-icon geocoder-icon-search"></span><input type="text" placeholder="Search"><ul class="suggestions" style="display: none;"></ul><div class="geocoder-pin-right"><button class="geocoder-icon geocoder-icon-close"></button><span class="geocoder-icon geocoder-icon-loading"></span></div></div></div><div class="mapboxgl-ctrl-top-right"><div class="mapboxgl-ctrl-group mapboxgl-ctrl"><button class="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-in"></button><button class="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-out"></button><button class="mapboxgl-ctrl-icon mapboxgl-ctrl-compass"><div class="arrow" style="transform: rotate(0deg);"></div></button></div></div><div class="mapboxgl-ctrl-bottom-left"></div><div class="mapboxgl-ctrl-bottom-right"><div class="mapboxgl-ctrl-attrib mapboxgl-ctrl"><a href="https://www.mapbox.com/about/maps/" target="_blank" title="Mapbox" aria-label="Mapbox" role="listitem">© Mapbox</a> <a href="https://www.openstreetmap.org/about/" target="_blank" title="OpenStreetMap" aria-label="OpenStreetMap" role="listitem">© OpenStreetMap</a> <a class="mapbox-improve-map" href="https://www.mapbox.com/map-feedback/#/-76.191124/40.679121/8" target="_blank" title="Improve this map" aria-label="Improve this map" role="listitem">Improve this map</a> <a href="https://www.maxar.com/" target="_blank" title="Maxar" aria-label="Maxar" role="listitem">© Maxar</a></div></div></div></div>
+<div id="features">
+    <section id="central-penn" class="active">
+        <h3>Central Penn Line North and South</h3>
+        <p>The proposed Central Penn Line North and Central Penn Line South would stretch from Susquehanna to Lancaster County, Pennsylvania totaling 183 miles. Along the 125 foot right of way (ROW), it is estimated that the construction path would cross a total of 52 areas designated as “protected lands.” The northern third of the proposed path consists of intersections with state lands and one federally protected land respectively.</p>
+    </section>
+    <section id="nblt">
+        <h3>North Branch Land Trust, Private Easement</h3>
+        <p>The following easement is managed by the North Branch Land Trust.  The total acreage of the parcel is 94.6 acres.  ASP’s proposed right of way would intersect approximately 2.5 acres of this private land.</p>
+    </section>
+    <section id="mekeel-wallace">
+        <h3>Mekeel and Wallace Tracts</h3>
+        <p>The following land acquisition is managed by an unspecified non-governmental organization.  The total acreage of the parcel is 131.8 acres.  ASP’s proposed right of way would intersect approximately 1.35 acres of this protected land.</p>
+    </section>
+    <section id="sgtwoosix">
+        <h3>State Gameland 206 (SG-206)</h3>
+        <p>The following Habitat and Species Management Area is known as State Game Land 206.  SG-206 is managed by the Pennsylvania Game Commission.  The total acreage of the protected area is 1520.02 acres.  ASP’s proposed right of way would intersect approximately 19.12 acres of SG-206.</p>
+    </section>
+    <section id="ricketts">
+        <h3>Ricketts Glen State Park</h3>
+        <p>The following state park is known as Ricketts Glenn and is managed by the Pennsylvania Bureau of State Parks.  The total acreage of the protected area is 9926.54 acres.  ASP’s proposed right of way would intersect approximately 7.05 acres of Rickett’s Glen State Park</p>
+    </section>
+    <section id="crawford">
+        <h3>The Crawford Easement</h3>
+        <p>The following easement is privately owned agricultural land.  This protected area is owned by H D Crawford and consists of a total of 109 acres.  ASP’s proposed right of way would intersect approximately 2.32 acres of the Crawford Easement.</p>
+    </section>
+    <section id="fetterman">
+        <h3>The R M Fetterman Easements</h3>
+        <p>The following easements are privately owned agricultural land.  These protected areas are owned by R M Fetterman and consist of a total of 361 acres.  ACP’s proposed right of way would intersect approximately 13.99 acres of the R M Fetterman Easements.</p>
+    </section>
+    <section id="sgeightyfour">
+        <h3>State Gameland 84 (SG-84)</h3>
+        <p>The following Habitat and Species Management Area is known as State Game Land 84.  SG-84 is managed by the Pennsylvania Game Commission.  The total acreage of the protected area is 8641.02 acres.  ASP’s proposed right of way would intersect approximately 12.98 acres of SG-84.</p>
+    </section>
+    <section id="deitrich">
+        <h3>D&amp;R Deitrich Easement</h3>
+        <p>The following easement is privately owned agricultural land.  This protected area is owned by D&amp;R Deitrich and consists of a total of 122.61 acres.  ASP’s proposed right of way would intersect approximately 2.16 acres of the D&amp;R Deitrich Easement.</p>
+    </section>
+    <section id="sgonethirtytwo">
+        <h3>State Gameland 132 (SG-132)</h3>
+        <p>The following Habitat and Species Management Area is known as State Game Land 132.  SG-132 is managed by the Pennsylvania Game Commission.  The total acreage of the protected area is 1283.04 acres.  ASP’s proposed right of way would intersect approximately 11.86 acres of SG-132.</p>
+    </section>
+    <section id="sgtwotwentynine">
+        <h3>State Gameland 229 (SG-229)</h3>
+        <p>The following Habitat and Species Management Area is known as State Game Land 229.  SG-229 is managed by the Pennsylvania Game Commission.  The total acreage of the protected area is 6142.19 acres.  ASP’s proposed right of way would intersect approximately 8.50 acres of SG-229.</p>
+    </section>
+    <section id="sgtwoeleven">
+        <h3>State Gameland 211 (SG-211)</h3>
+        <p>The following Habitat and Species Management Area is known as State Game Land 211.  SG-211 is managed by the Pennsylvania Game Commission.  The total acreage of the protected area is 41047.64 acres.  ASP’s proposed right of way would intersect approximately 3.63 acres of SG-211.</p>
+    </section>
+    <section id="dod">
+        <h3>Fort Indiantown Gap</h3>
+        <p>Fort Indiantown Gap is a designated protected area by the Department of Defense.  The total acreage of this federal land is 17030.89 acres.  ASP’s proposed right of way would intersect approximately 8.21 acres of Fort Indiantown Gap.</p>
+    </section>
+    <section id="adams">
+        <h3>L&amp;A Adams Easement</h3>
+        <p>The following easement is privately owned agricultural land.  This protected area is owned by L&amp;A Adams and consists of a total of 81.05 acres.  ASP’s proposed right of way would intersect approximately 5.18 acres of the L&amp;A Adams Easement.</p>
+    </section>
+    <section id="early">
+        <h3>Early Easement</h3>
+        <p>The following easement is privately owned agricultural land.  This protected area is owned by Early and consists of a total of 111.22 acres.  ASP’s proposed right of way would intersect approximately 5.96 acres of the Early Easement.</p>
+    </section>
+    <section id="berger">
+        <h3>J Berger Easement</h3>
+        <p>The following easement is privately owned agricultural land.  This protected area is owned by J Berger and consists of a total of 139.09 acres.  ASP’s proposed right of way would intersect approximately 5.57 acres of the J Berger Easement.</p>
+    </section>
+    <section id="wampler">
+        <h3>S Wampler Easement</h3>
+        <p>The following easement is privately owned agricultural land.  This protected area is owned by S Wampler and consists of a total of 101.75 acres.  ASP’s proposed right of way would intersect approximately 1.28 acres of the S Wampler Easement.</p>
+    </section>
+    <section id="alger">
+        <h3>R&amp;V Sollenberger and D Alger Easements</h3>
+        <p>The following easements are privately owned agricultural lands.  This protected areas are owned by R&amp;V Sollenberger as well as D Alger.  Together both parcels consist of a total of 283.05 acres.  ASP’s proposed right of way would intersect approximately 11.05 acres of the R&amp;V Sollenberger and D Alger Easements.</p>
+    </section>
+    <section id="lanc1">
+        <h3>Lancaster County Agricultural Easement 1</h3>
+        <p>The following easement is privately owned farm.  This protected area is owner is Lancaster county and the parcel consists of a total of 31.52 acres.  ASP’s proposed right of way would intersect approximately 2.97 acres of the following agricultural easement.</p>
+    </section>
+    <section id="lanc2">
+        <h3>Garber and Lancaster County Agricultural Easement 2</h3>
+        <p>The following easements consist of a privately owned agricultural lands and a county agricultural easement.  The protected areas are owned by Garber and Lancaster County.  Together both parcels consist of a total of 318.75 acres.  ASP’s proposed right of way would intersect approximately 5.77 acres of the Garber and Lancaster County Agricultural Easement 2.</p>
+    </section>
+    <section id="lanc34">
+        <h3>Lancaster County Agricultural Easements 3 &amp; 4 and Breneman Easement</h3>
+        <p>The following easements consist of a privately owned agricultural lands and two county agricultural easements.  The protected areas are owned by Breneman and Lancaster County.  Together all three parcels consist of a total of 161.70 acres.  ASP’s proposed right of way would intersect approximately 9.84 acres of the Lancaster County Agricultural Easements 3 &amp; 4 and the Breneman Easement.</p>
+    </section>
+    <section id="heisey">
+        <h3>V&amp;R Heisey Easement</h3>
+        <p>The following easement is privately owned agricultural land.  This protected area is owned by V&amp;R Heisey and consists of a total of 104.25 acres.  ASP’s proposed right of way would intersect approximately 10.69 acres of the V&amp;R Heisey Easement.</p>
+    </section>
+    <section id="lanc56">
+        <h3>Lancaster County Agricultural Easements 5 &amp; 6</h3>
+        <p>The following easements consist of two county agricultural easements.  The protected areas are privately owned farms acquired by Lancaster County.  Together both parcels consist of a total of 229.34 acres.  ASP’s proposed right of way would intersect approximately 5.64 acres of Lancaster County Agricultural Easements 5 &amp; 6.</p>
+    </section>
+    <section id="miller">
+        <h3>Miller Family LP Easement</h3>
+        <p>The following easement is privately owned agricultural land.  This protected area is owned by the Miller Family and consists of a total of 121.40 acres.  ASP’s proposed right of way would intersect approximately 4.63 acres of the Miller Family LP Easement.</p>
+    </section>
+    <section id="lft123">
+        <h3>Lancaster Farmland Trust Easements 1, 2, &amp; 3</h3>
+        <p>The following easements consist of private land.  The three protected areas are owned by Lancaster Farmland Trust and total 144.01 acres.  ASP’s proposed right of way would intersect approximately 4.70 acres of Lancaster Farmland Trust Easements 1, 2, &amp; 3.</p>
+    </section>
+    <section id="shellenberger">
+        <h3>Shellenberger Easement</h3>
+        <p>The following easement is privately owned agricultural land.  This protected area is owned by the Shellenbergers and consists of a total of 99.18 acres.  ASP’s proposed right of way would intersect approximately 8.16 acres of the Shellenberger Easement.</p>
+    </section>
+    <section id="rdeasement">
+        <h3>Rohrer Dairy Easement and Georgia L Fry Easements</h3>
+        <p>The following easements are privately owned agricultural lands.  The protected areas are private farms owned by the Rohrer Dairy and Georgia L Fry.  Together both parcels consist of a total of 215.3 acres.  ASP’s proposed right of way would intersect approximately 14.53 acres of the Rohrer Dairy Easement and Georgia L Fry Easement.</p>
+    </section>
+    <section id="lc7">
+        <h3>Lancaster County Agricultural Easement 7 and Barley Easement</h3>
+        <p>The following easements consist of a privately owned agricultural lands and two county agricultural easements.  The protected areas are owned by the Barleys and Lancaster County.  Together both parcels consist of a total of 161.92 acres.  ASP’s proposed right of way would intersect approximately 8.46 acres of the Lancaster County Agricultural Easement 7 and the Barley Easement.</p>
+    </section>
+    <section id="funk">
+        <h3>Funk and Donald W &amp; Joan Witmer Easements</h3>
+        <p>The following easements consist of a privately owned agricultural lands.  The protected areas are owned by the Funks and Donald W &amp; Joan Witmer.  Together both parcels consist of a total of 84.44 acres.  ASP’s proposed right of way would intersect approximately 7.65 acres of the Funk and Donald W &amp; Joan Witmer Easements.</p>
+    </section>
+    <section id="lc8">
+        <h3>Lancaster County Agricultural Easement 8</h3>
+        <p>The following easement consists of a privately owned agricultural land.  The protected area is owned by Lancaster County.  The parcel consists of a total of 73.81 acres.  ASP’s proposed right of way would intersect approximately 5.85 acres of Lancaster County Agricultural Easement 8.</p>
+    </section>
+    <section id="lanc4">
+        <h3>Lancaster Farmland Trust Easement 4</h3>
+        <p>The following easement consists of private land.  The protected area is owned by Lancaster Farmland Trust and total 63.11 acres.  ASP’s proposed right of way would intersect approximately 5.98 acres of Lancaster Farmland Trust Easement 4.</p>
+    </section>
+    <section id="lanc5and6">
+        <h3>Lancaster Farmland Trust Easement 5 &amp; 6</h3>
+        <p>The following easements consist of private agricultural land.  The protected areas are owned by Lancaster Farmland Trust and total 182.72 acres.  ASP’s proposed right of way would intersect approximately 8.04 acres of Lancaster Farmland Trust Easements 5 &amp; 6.</p>
+    </section>
+     <section id="lanc7">
+        <h3>Lancaster Farmland Trust Easement 7</h3>
+        <p>The following easement consists of private land.  The protected area is owned by Lancaster Farmland Trust and totals 77.84 acres.  ASP’s proposed right of way would intersect approximately 3.43 acres of Lancaster Farmland Trust Easement 7.</p>
+    </section>
+     <section id="dandaeasement">
+        <h3>Donald E Shank &amp; A Tobin Easement</h3>
+        <p>The following easement consists of private agricultural land.  The protected area is owned by Donald E Shank &amp; A Tobin Easement and totals 173.08 acres.  ASP’s proposed right of way would intersect approximately 7.36 acres of the Donald E Shank &amp; A Tobin Easement.</p>
+    </section>
+     <section id="lc9">
+        <h3>Lancaster County Agricultural Easement 9 and Kauffman Easement</h3>
+        <p>The following easements consist of a privately owned agricultural easement and a county agricultural easement.  The protected areas are owned by the Kauffmans and Lancaster County.  Together both parcels consist of a total of 147.73 acres.  ASP’s proposed right of way would intersect approximately 10.08 acres of the Lancaster County Agricultural Easement 9 and the Kauffman Easement.</p>
+    </section>
+     <section id="boltons">
+        <h3>Bolton &amp; Findley Easement</h3>
+        <p>The following easement consists of private land.  The protected area is owned by the Boltons and the Findleys and totals 47.79 acres.  ASP’s proposed right of way would intersect approximately 1.21 acres of the Bolton &amp; Findley Easement.</p>
+    </section>
+    <section id="lanc9">
+        <h3>Lancaster County Agricultural Easement 9</h3>
+        <p>The following easement consists of a privately owned agricultural land.  The protected area is owned by Lancaster County.  The parcel consists of a total of 60.46 acres.  ASP’s proposed right of way would intersect approximately 1.46 acres of Lancaster County Agricultural Easement 9.</p>
+    </section>
+</div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoicmRhd2VzMSIsImEiOiJ0OHNqNUFFIn0.KpaFJHMqmruQ9UFeg2ATeA';
+
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/rdawes1/ciozwo72i000mb0njqt7o2uf7',
+    center: [-76.191124, 40.679121],
+    zoom: 7.32,
+    bearing: 0,
+    pitch: 0
+});
+
+map.scrollZoom.disable();
+
+map.addControl(new mapboxgl.Geocoder());
+
+map.addControl(new mapboxgl.Navigation());
+
+var chapters = {
+    'central-penn': {
+        bearing: 0,
+        center: [-76.191124, 40.679121],
+        zoom: 7.32,
+        pitch: 0
+    },
+    'nblt': {
+        duration: 6000,
+        center: [-75.709864, 41.711639],
+        bearing: 0,
+        zoom: 15.3,
+        pitch: 0
+    },
+    'mekeel-wallace': {
+        bearing: 0,
+        center: [-76.022475, 41.323550],
+        zoom: 15.5,
+        speed: 0.6,
+        pitch: 40
+    },
+    'sgtwoosix': {
+        bearing: 90,
+        center: [-76.188752, 41.302087],
+        zoom: 15.24,
+        pitch: 40
+    },
+    'ricketts': {
+        bearing: 0,
+        center: [-76.263947, 41.293167],
+        zoom: 15.23,
+        pitch: 40,
+        speed: 0.5
+    },
+    'crawford': {
+        bearing: 0,
+        center: [-76.462839, 41.070778],
+        zoom: 15.28,
+        pitch: 0
+    },
+    'fetterman': {
+        bearing: 0,
+        center: [-76.473414, 40.930768],
+        zoom: 14.3,
+        pitch: 0
+    },
+    'sgeightyfour': {
+        bearing: 0,
+        center: [-76.499321, 40.729215],
+        zoom: 14.08,
+        pitch: 0
+    },
+    'deitrich': {
+        bearing: 0,
+        center: [-76.496209, 40.695834],
+        zoom: 14.79,
+        pitch: 0
+    },
+    'sgonethirtytwo': {
+       bearing: 0,
+        center: [-76.478696, 40.684476],
+        zoom: 14.47,
+        pitch: 0
+    },
+    'sgtwotwentynine': {
+       bearing: 0,
+        center: [-76.416181, 40.577369],
+        zoom: 14.37,
+        pitch: 0
+    },
+    'sgtwoeleven': {
+       bearing: 90,
+        center: [-76.552817, 40.492924],
+        zoom: 15.74,
+        pitch: 40
+    },
+    'dod': {
+       bearing: 0,
+        center: [-76.538068, 40.458620],
+        zoom: 14.31,
+        pitch: 0
+    },
+    'adams': {
+       bearing: 0,
+        center: [-76.526161, 40.409143],
+        zoom: 15.7,
+        pitch: 0
+    },
+    'early': {
+       bearing: 0,
+        center: [-76.533924, 40.352566],
+        zoom: 14.5,
+        pitch: 0
+    },
+    'berger': {
+       bearing: 0,
+        center: [-76.526704, 40.313270],
+        zoom: 15.31,
+        pitch: 0
+    },
+    'wampler': {
+       bearing: 180,
+        center: [-76.532747, 40.302826],
+        zoom: 15.23,
+        pitch: 40
+    },
+    'alger': {
+       bearing: 0,
+        center: [-76.525708, 40.280768],
+        zoom: 14.73,
+        pitch: 0
+    },
+    'lanc1': {
+       bearing: 0,
+        center: [-76.526268, 40.203182],
+        zoom: 15.91,
+        pitch: 0
+    },
+    'lanc2': {
+       bearing: 90,
+        center: [-76.523166, 40.192910],
+        zoom: 15.27,
+        pitch: 20
+    },
+    'lanc34': {
+       bearing: 0,
+        center: [-76.514022, 40.181347],
+        zoom: 15.15,
+        pitch: 20
+    },
+    'heisey': {
+       bearing: 0,
+        center: [-76.480548, 40.160531],
+        zoom: 15.23,
+        pitch: 0
+    },
+    'lanc56': {
+       bearing: 90,
+        center: [-76.469513, 40.148891],
+        zoom: 15.12,
+        pitch: 30
+    },
+    'miller': {
+       bearing: 0,
+        center: [-76.484209, 40.072065],
+        zoom: 14.95,
+        pitch: 0
+    },
+    'lft123': {
+       bearing: 40,
+        center: [-76.471297, 40.042387],
+        zoom: 14.79,
+        pitch: 20
+    },
+    'shellenberger': {
+       bearing: 0,
+        center: [-76.456839, 40.019889],
+        zoom: 15.28,
+        pitch: 0
+    },
+    'rdeasement': {
+       bearing: -160,
+        center: [-76.456813, 40.004487],
+        zoom: 14.97,
+        pitch: 20
+    },
+    'lc7': {
+       bearing: 0,
+        center: [-76.440062, 39.981652],
+        zoom: 14.91,
+        pitch: 0
+    },
+    'funk': {
+       bearing: 90,
+        center: [-76.433339, 39.972354],
+        zoom: 15.54,
+        pitch: 20
+    },
+    'lc8': {
+       bearing: 0,
+        center: [-76.407069, 39.953758],
+        zoom: 15.44,
+        pitch: 20
+    },
+    'lanc4': {
+       bearing: -70,
+        center: [-76.391591, 39.948168],
+        zoom: 15.69,
+        pitch: 20
+    },
+    'lanc5and6': {
+       bearing: 0,
+        center: [-76.348971, 39.928895],
+        zoom: 14.54,
+        pitch: 20
+    },
+    'lanc7': {
+       bearing: 0,
+        center: [-76.311138, 39.919191],
+        zoom: 15.12,
+        pitch: 20
+    },
+    'dandaeasement': {
+       bearing: -40,
+        center: [-76.293409, 39.906906],
+        zoom: 15.04,
+        pitch: 20
+    },
+    'lc9': {
+       bearing: 0,
+        center: [-76.273267, 39.875102],
+        zoom: 14.91,
+        pitch: 0
+    },
+    'boltons': {
+       bearing: 0,
+        center: [-76.258367, 39.842858],
+        zoom: 15.62,
+        pitch: 0
+    },
+    'lanc9': {
+       bearing: 0,
+        center: [-76.255609, 39.835006],
+        zoom: 15.55,
+        pitch: 0
+    }
+};
+
+// On every scroll event, check which element is on screen
+window.onscroll = function() {
+    var chapterNames = Object.keys(chapters);
+    for (var i = 0; i < chapterNames.length; i++) {
+        var chapterName = chapterNames[i];
+        if (isElementOnScreen(chapterName)) {
+            setActiveChapter(chapterName);
+            break;
+        }
+    }
+};
+
+var activeChapterName = 'baker';
+function setActiveChapter(chapterName) {
+    if (chapterName === activeChapterName) return;
+
+    map.flyTo(chapters[chapterName]);
+
+    document.getElementById(chapterName).setAttribute('class', 'active');
+    document.getElementById(activeChapterName).setAttribute('class', '');
+
+    activeChapterName = chapterName;
+}
+
+function isElementOnScreen(id) {
+    var element = document.getElementById(id);
+    var bounds = element.getBoundingClientRect();
+    return bounds.top < window.innerHeight && bounds.bottom > 0;
+}
+
+</script>
+
+
+</body></html>
