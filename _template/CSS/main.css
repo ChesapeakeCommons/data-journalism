@@ -1,3 +1,6 @@
+
+
+
 /** Reset some basic elements */
 
 body,
@@ -19,6 +22,7 @@ figure {
     margin: 0;
     padding: 0;
 }
+
 /** Basic styling */
 
 body {
@@ -50,22 +54,22 @@ figure,
 .highlight {
     margin-bottom: 15px;
 }
-/** Images */
 
+/** Images */
 img {
     max-width: 100%;
     vertical-align: middle;
 }
-/** Figures */
 
+/** Figures */
 figure > img {
     display: block;
 }
 figcaption {
     font-size: 14px;
 }
-/** Lists */
 
+/** Lists */
 ul,
 ol {
     margin-left: 30px;
@@ -74,8 +78,8 @@ li > ul,
 li > ol {
     margin-bottom: 0;
 }
-/** Headings */
 
+/** Headings */
 h1,
 h2,
 h3,
@@ -98,7 +102,6 @@ a:hover {
     text-decoration: underline;
 }
 /** Blockquotes */
-
 blockquote {
     color: #828282;
     border-left: 4px solid #e8e8e8;
@@ -110,8 +113,8 @@ blockquote {
 blockquote >:last-child {
     margin-bottom: 0;
 }
-/** Code formatting */
 
+/** Code formatting */
 pre,
 code {
     font-size: 15px;
@@ -629,10 +632,18 @@ h2 {
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 4em;
 }
-.problem p {
+.basic p {
     font-size: 1.2em;
     color: #b0b0b0;
 }
+.basic h3{
+    text-align: center;
+    color: #48aa9a;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+
 .findings p,
 .process p {
     font-size: 1.2em;
