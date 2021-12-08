@@ -798,10 +798,10 @@ h2 {
     margin-left: 1em;
     padding: 0.5em;
 }
-.map {
+.sub-frame {
     position: relative;
 }
-.map p {
+.sub-frame p {
     font-size: 1.2em;
     color: var(--general_text);
 }
