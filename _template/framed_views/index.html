@@ -13,34 +13,34 @@
 </head>
 <body>
 
-<style>
-#map {
-    position: fixed;
-    width:50%;
-}
-#features {
-    width: 50%;
-    margin-left: 50%;
-    font-family: sans-serif;
-    overflow-y: scroll;
-    background-color: #fafafa;
-}
+    <style>
+            #map {
+                position: fixed;
+                width:50%;
+            }
+            #features {
+                width: 50%;
+                margin-left: 50%;
+                font-family: sans-serif;
+                overflow-y: scroll;
+                background-color: #fafafa;
+            }
 
-section {
-    padding:  25px 50px;
-    line-height: 25px;
-    border-bottom: 1px solid #ddd;
-    opacity: 0.25;
-    font-size: 13px;
-}
-section.active {
-    opacity: 1;
-}
-section:last-child {
-    border-bottom: none;
-    margin-bottom: 650px;
-}
-</style>
+            section {
+                padding:  25px 50px;
+                line-height: 25px;
+                border-bottom: 1px solid #ddd;
+                opacity: 0.25;
+                font-size: 13px;
+            }
+            section.active {
+                opacity: 1;
+            }
+            section:last-child {
+                border-bottom: none;
+                margin-bottom: 650px;
+            }
+    </style>
 
 <div id="map" class="mapboxgl-map"><div class="mapboxgl-canvas-container mapboxgl-interactive"><canvas class="mapboxgl-canvas" tabindex="0" width="953" height="520" style="position: absolute; width: 953px; height: 520px;"></canvas></div><div class="mapboxgl-control-container"><div class="mapboxgl-ctrl-top-left"><div class="mapboxgl-ctrl-geocoder mapboxgl-ctrl"><span class="geocoder-icon geocoder-icon-search"></span><input type="text" placeholder="Search"><ul class="suggestions" style="display: none;"></ul><div class="geocoder-pin-right"><button class="geocoder-icon geocoder-icon-close"></button><span class="geocoder-icon geocoder-icon-loading"></span></div></div></div><div class="mapboxgl-ctrl-top-right"><div class="mapboxgl-ctrl-group mapboxgl-ctrl"><button class="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-in"></button><button class="mapboxgl-ctrl-icon mapboxgl-ctrl-zoom-out"></button><button class="mapboxgl-ctrl-icon mapboxgl-ctrl-compass"><div class="arrow" style="transform: rotate(0deg);"></div></button></div></div><div class="mapboxgl-ctrl-bottom-left"></div><div class="mapboxgl-ctrl-bottom-right"><div class="mapboxgl-ctrl-attrib mapboxgl-ctrl"><a href="https://www.mapbox.com/about/maps/" target="_blank" title="Mapbox" aria-label="Mapbox" role="listitem">© Mapbox</a> <a href="https://www.openstreetmap.org/about/" target="_blank" title="OpenStreetMap" aria-label="OpenStreetMap" role="listitem">© OpenStreetMap</a> <a class="mapbox-improve-map" href="https://www.mapbox.com/map-feedback/#/-76.191124/40.679121/8" target="_blank" title="Improve this map" aria-label="Improve this map" role="listitem">Improve this map</a> <a href="https://www.maxar.com/" target="_blank" title="Maxar" aria-label="Maxar" role="listitem">© Maxar</a></div></div></div></div>
 <div id="features">

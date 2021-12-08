@@ -1,4 +1,48 @@
 
+/**
+These are the config variables.
+I'm gonna try to put a bunch (*enough...)... yeah, of them
+here up top, so things like 'color' and 'background-color' can be changed easily.
+Yup ? Yeah, okay....
+ */
+
+html {
+
+    /*First up, lets define some variables
+    (these have to be done with in a html DOM obj rule{}, because... 🤷)*/
+
+    /*Howdy-hoo, now this is where (wair) we're (whurrr) going to define
+    color schemas. We make variables first for the colors, like...
+    --color_emerald-sunset, or --color_jezebel-juice, or --color_blue.
+    We could even create sets, ---scheme-antelope_color_jezebel-juice, by concatenating
+    the strings of the set and color, or something...
+    */
+
+    --color_black: #000000;
+    --color_off-black: #0d0d0d;
+
+    --color_white: #ffffff;
+
+    --color_grey : #b0b0b0;
+
+    --color_spearment : #48aa9a;
+    --color_marmalade : #fe8300;
+    --color_mandarin   : #fe6600;
+
+
+    /*Now we have variables for our .hero section.
+    (....stuff leads with 'hero' 😉 ). We reference our --color variables defined
+    above. This lets of easily change all things through out the document.
+    Head to toes... yuck yuck :|
+    */
+
+    --hero_bg-image: url('../assets/_images/hero_sample_04.png');
+    --hero_title-color: var(--color_white);
+    --palette_darkest: var(--color_off-black);
+    --primary_color: var(--color_mandarin);
+    --general_text : var(--color_grey);
+    --drop-shadow: var(--color_off-black);
+}
 
 
 /** Reset some basic elements */
@@ -28,7 +72,7 @@ figure {
 body {
     font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #111;
-    background-color: #0d0d0d;
+    background-color: var(--palette_darkest);
     -webkit-text-size-adjust: 100%;
     -webkit-font-feature-settings: "kern" 1;
     -moz-font-feature-settings: "kern" 1;
@@ -171,7 +215,12 @@ pre > code {
 .icon > svg path {
     fill: #828282;
 }
-/** Site header */
+/**
+//////////
+Site header
+//////////
+//////////
+*/
 
 .site-header {
     border-top: 5px solid #424242;
@@ -248,16 +297,20 @@ pre > code {
         margin-right: 0;
     }
 }
-/* Content block */
+
+
+/**
+//////////
+Content block
+//////////
+//////////
+*/
 
 section {
     min-height: 600px;
     padding: 40px 0;
 }
-.findings,
-.process {
-    background: #f7f7f7;
-}
+
 /** Site footer */
 
 .site-footer {
@@ -314,6 +367,7 @@ section {
         width: calc(100% - (30px / 2));
     }
 }
+
 /** Page content */
 
 .page-content {
@@ -599,24 +653,24 @@ table th {
 
 .hero {
     text-align: center;
-    background-image: url("../images/hero.jpg");
+    background-image: var(--hero_bg-image);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: fixed;
-    box-shadow: inset 0 -200px 90px -40px #0d0d0d;
+    box-shadow: inset 0 -200px 90px -40px var(--drop-shadow);
     color: #fff;
     padding-bottom: 6em;
 }
 .hero h1 {
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 12em;
-    color: #fff;
+    color: var(--hero_title-color);
 }
 .hero h2 {
     font-family: 'Raleway', sans-serif;
     text-align: center;
     font-size: 3em;
-    color: #fff;
+    color: var(--hero_title-color);
     text-transform: uppercase;
     letter-spacing: 0.01em;
     margin: 1em 0 2em;
@@ -628,29 +682,40 @@ table th {
 
 h2 {
     text-align: center;
-    color: #48aa9a;
+    color: var(--primary_color);
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 4em;
 }
+
 .basic p {
     font-size: 1.2em;
-    color: #b0b0b0;
+    color: var(--general_text);
 }
 .basic h3{
     text-align: center;
-    color: #48aa9a;
+    color: var(--primary_color);;
     font-family: 'Playfair Display', Georgia, serif;
     font-size: 2em;
     margin-bottom: 1em;
 }
 
-.findings p,
-.process p {
+.findings p{
     font-size: 1.2em;
 }
 .findings {
     padding: 40px 0 6em;
+    background: #f7f7f7;
 }
+
+.white_bg {
+    background: #f7f7f7;
+}
+.white_bg p {
+    font-size: 1.2em;
+}
+
+
+
 .sub-heading {
     margin: 2em 0 0;
     font-weight: bold;
@@ -663,7 +728,7 @@ h2 {
     margin: 1em 0;
     height: 6px;
     width: 72px;
-    background: #0d0d0d;
+    background: var(--palette_darkest);
 }
 .export {
     display: block;
@@ -671,15 +736,15 @@ h2 {
     text-decoration: none;
     padding: 1em 0;
     text-align: center;
-    border: 2px solid #0d0d0d;
+    border: 2px solid var(--palette_darkest);
     margin: 4em auto 0;
-    color: #0d0d0d;
+    color: var(--palette_darkest);
     font-weight: bold;
     transition: all 200ms ease-in-out;
 }
 .export:hover {
     color: #fff;
-    background-color: #0d0d0d;
+    background-color: var(--palette_darkest);
     text-decoration: none;
 
 }
@@ -723,11 +788,11 @@ h2 {
 }
 .chart .record span:nth-child(2) {
     height: 2em;
-    background: #48aa9a;
+    background: var(--primary_color);;
 }
 .chart .record:nth-child(even) span:nth-child(2) {
     height: 2em;
-    background: #48aa9a;
+    background: var(--primary_color);;
 }
 .chart .record span:nth-child(3) {
     margin-left: 1em;
@@ -738,12 +803,12 @@ h2 {
 }
 .map p {
     font-size: 1.2em;
-    color: #b0b0b0;
+    color: var(--general_text);
 }
 #route-log {
     padding: 1em;
-    color: #b0b0b0;
-    background: #0d0d0d;
+    color: var(--general_text);
+    background: var(--palette_darkest);
     position: absolute;
     top: 20px;
     left: 20px;
