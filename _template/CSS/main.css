@@ -38,6 +38,9 @@ html {
 
     --hero_bg-image: url('../assets/_images/hero_sample_04.png');
     --hero_title-color: var(--color_white);
+    --hero_box-shadow-size: -200px;
+    --hero_box-shadow-color: var(--color_off-black);
+
     --palette_darkest: var(--color_off-black);
     --primary_color: var(--color_mandarin);
     --general_text : var(--color_grey);
@@ -67,7 +70,10 @@ figure {
     padding: 0;
 }
 
-/** Basic styling */
+/** Basic styling
+Yeah, so we have more to do here in terms of ordering stuff and cutting down
+on unnecessary definitions
+*/
 
 body {
     font: 400 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -657,7 +663,7 @@ table th {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: fixed;
-    box-shadow: inset 0 -200px 90px -40px var(--drop-shadow);
+    box-shadow: inset 0 var(--hero_box-shadow-size) 90px -40px var(--hero_box-shadow-color);
     color: #fff;
     padding-bottom: 6em;
 }
