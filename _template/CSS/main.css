@@ -24,11 +24,15 @@ html {
     --color_white: #ffffff;
 
     --color_grey : #b0b0b0;
+    --color_light-grey : #e8e8e8;
 
     --color_spearment : #48aa9a;
     --color_marmalade : #fe8300;
     --color_mandarin   : #fe6600;
 
+    --color_tropical-water : #26b2b1;
+    --color_carribian-water : #2ac7c6;
+    --color_sea-turtle : #197372;
 
     /*Now we have variables for our .hero section.
     (....stuff leads with 'hero' 😉 ). We reference our --color variables defined
@@ -40,6 +44,14 @@ html {
     --hero_title-color: var(--color_white);
     --hero_box-shadow-size: -200px;
     --hero_box-shadow-color: var(--color_off-black);
+
+    --link_active-color : var(--color_tropical-water);
+    --link_visted-color :var(--color_sea-turtle);
+    --link_hover-color: var(--color_carribian-water);
+
+    --border-color: var(--color_light-grey);
+
+    --sub_heading-color: var(--color_mandarin);
 
     --palette_darkest: var(--color_off-black);
     --primary_color: var(--color_mandarin);
@@ -141,20 +153,20 @@ h6 {
 /** Links */
 
 a {
-    color: #26b2b1;
+    color: var(--link_active-color);
     text-decoration: none;
 }
 a:visited {
-    color: #197372;
+    color: var(--link_visted-color);
 }
 a:hover {
-    color: #2ac7c6;
+    color: var(--link_hover-color);
     text-decoration: underline;
 }
 /** Blockquotes */
 blockquote {
     color: #828282;
-    border-left: 4px solid #e8e8e8;
+    border-left: 4px solid var(--border-color);
     padding-left: 15px;
     font-size: 18px;
     letter-spacing: -1px;
@@ -168,7 +180,7 @@ blockquote >:last-child {
 pre,
 code {
     font-size: 15px;
-    border: 1px solid #e8e8e8;
+    border: 1px solid var(--border-color);
     border-radius: 3px;
     background-color: #eef;
 }
@@ -230,7 +242,7 @@ Site header
 
 .site-header {
     border-top: 5px solid #424242;
-    border-bottom: 1px solid #e8e8e8;
+    border-bottom: 1px solid var(--border-color);
     min-height: 56px;
     position: relative;
 }
@@ -266,7 +278,7 @@ Site header
         top: 9px;
         right: 15px;
         background-color: #222;
-        border: 1px solid #e8e8e8;
+        border: 1px solid var(--border-color);
         border-radius: 5px;
         text-align: right;
     }
@@ -734,7 +746,7 @@ h2 {
     margin: 1em 0;
     height: 6px;
     width: 72px;
-    background: var(--palette_darkest);
+    background: var(--sub_heading-color);
 }
 .export {
     display: block;
@@ -806,6 +818,7 @@ h2 {
 }
 .sub-frame {
     position: relative;
+    padding-bottom: 0px;
 }
 .sub-frame p {
     font-size: 1.2em;
